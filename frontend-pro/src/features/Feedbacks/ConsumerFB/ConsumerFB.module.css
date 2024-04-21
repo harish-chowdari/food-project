@@ -1,0 +1,102 @@
+.feedbackContainer {
+  font-family: Arial, sans-serif;
+  padding: 0px 10px;
+}
+
+.feedbackContainer h2 {
+  text-align: center;
+  border-bottom: 1px solid #2C3E50;
+  padding-bottom: 10px;
+}
+
+.providerDiv {
+  margin-top: 30px;
+  border: 2px solid #2C3E50;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.75); 
+}
+
+.providerName {
+  text-align: center;
+  padding: 10px 0px;
+  background-color: #2C3E50;
+  color: white;
+}
+
+.feedbackDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 25px 25px;
+  background-color: #536272;
+
+  box-shadow: inset 8px 8px 8px -6px rgba(0, 0, 0, 0.75),
+              inset -8px -8px 8px -6px rgba(0, 0, 0, 0.75);
+  height: 50vh;
+overflow: auto;
+}
+
+.pTags {
+  cursor: pointer;
+  width: 300px;
+  background-color: #94a6b8;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 8px #2C3E50; 
+  transition: transform 0.3s ease; 
+  animation: fadeIn 1s ease;
+  height: 25vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.pTags p{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0px;
+  flex-wrap: wrap;
+}
+
+.pTags p {
+  border-bottom:  1px solid #2C3E50;
+}
+
+.pTags:hover {
+  transform: translateY(-5px); 
+}
+
+.itemName {
+  font-weight: bold;
+  margin-top: 5px; 
+}
+
+.feedbackText {
+  margin-top: 5px;
+}
+
+
+.pTags span{
+  font-weight: 550;
+  font-size: 1.1rem;
+}
+
+.date {
+  margin-top: 5px;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
