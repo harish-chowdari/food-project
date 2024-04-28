@@ -107,6 +107,7 @@ const RegistrationForm = () => {
             onChange={(e) => setemail(e.target.value)}
             required />
         </div>
+
         <div className="inputGroup">
           <input 
             type="password" 
@@ -115,6 +116,9 @@ const RegistrationForm = () => {
             onChange={(e) => setpassword(e.target.value)}
             required />
         </div>
+
+        
+     {   userType === 'provider' ? <></> :
         <div className="inputGroup">
         <input
             type="text"
@@ -122,7 +126,8 @@ const RegistrationForm = () => {
             value={foodNotContains}
             onChange={(e) => setFoodNotContains(e.target.value)}
             required />
-    </div>
+    </div>}
+
         {/* Provider-specific fields */}
         {userType === 'provider' && (
           <>
