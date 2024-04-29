@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../../axios';
 import styles from "./Bookings.module.css";
 import PopUp from "../../components/popup/popup";
 import Loader from '../../components/loader/loader';
@@ -18,7 +18,7 @@ const Bookings = () => {
     const fetchBookings = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:3006/booking/get-bookings/${userId}`);
+        const response = await axios.get(`/booking/get-bookings/${userId}`);
         setBookings(response.data.bookings);
         setLoading(false);
         if (response.data.message) {
@@ -50,7 +50,7 @@ const Bookings = () => {
         return;
       }
   
-      const res = await axios.post('http://localhost:3006/feedback/send-feedback', {
+      const res = await axios.post('/feedback/send-feedback', {
         providerId,
         itemId,
         feedback: feedbackText

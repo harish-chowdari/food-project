@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
-import axios from 'axios';
+import axios from '../../axios';
 import "./Chart.css"
 
 
@@ -16,7 +16,7 @@ const ChartComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3006/provider/provider-statistics-details/${providerId}`);
+        const response = await axios.get(`/provider/provider-statistics-details/${providerId}`);
         const statisticsDetails = response.data.statisticsDetails;
 
         const data = statisticsDetails.map(statistic => ({

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../../../axios';
 import Design from "./ProviderFB.module.css";
 import Loader from '../../../components/loader/loader';
 import { useParams } from 'react-router-dom';
@@ -12,7 +12,7 @@ const ProviderFB = () => {
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const response = await axios.get(`http://localhost:3006/feedback/feedbacks-by-provider/${providerId}`);
+        const response = await axios.get(`/feedback/feedbacks-by-provider/${providerId}`);
         setFeedbacks(response.data.feedbacks);
         setLoading(false); // Set loading to false after fetching feedbacks
       } catch (error) {

@@ -4,6 +4,8 @@ import axios from '../../axios';
 import Loader from '../../components/loader/loader';
 import PopUp from '../../components/popup/popup';
 
+
+
 const ListingsDisplay = () => {
     const [listings, setListings] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -16,7 +18,7 @@ const ListingsDisplay = () => {
         try {
             const res = await axios.get(`/provider/listings/${providerId}`);
             const fetchedListings = res.data.listings;
-            const bookingsRes = await axios.get("http://localhost:3006/booking/get-all-bookings");
+            const bookingsRes = await axios.get("/booking/get-all-bookings");
             const bookings = bookingsRes.data.bookings;
 
             const updatedListings = fetchedListings.map(listing => {
@@ -53,7 +55,7 @@ const ListingsDisplay = () => {
 
                 const res = await axios.put(`/consumer/bookListing/${itemId}`, { status: 'claimed', userId });
 
-                const statisticsRes = await axios.post(`http://localhost:3006/provider/add-statistics/${providerId}`, {
+                const statisticsRes = await axios.post(`/provider/add-statistics/${providerId}`, {
                     headLine: headLine,
                     quantity: quantity 
                 });

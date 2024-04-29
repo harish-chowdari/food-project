@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../../../axios';
 import Design from "./ConsumerFB.module.css";
 import Loader from '../../../components/loader/loader';
 
@@ -10,7 +10,7 @@ const ConsumerFB = () => {
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const response = await axios.get('http://localhost:3006/feedback/all-feedbacks');
+        const response = await axios.get('/feedback/all-feedbacks');
         setFeedbacks(response.data.feedbacks);
         setLoading(false);
       } catch (error) {

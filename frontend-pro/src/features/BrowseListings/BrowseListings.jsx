@@ -18,7 +18,7 @@ const BrowseListings = () => {
         try
         {
 
-            const res = await axios.get(`http://localhost:3006/auth/consumer-details/${userId}`);
+            const res = await axios.get(`/auth/consumer-details/${userId}`);
                 setEmail(res.data);
                 console.log(res.data)
                 setLoading(false);
@@ -67,7 +67,7 @@ const BrowseListings = () => {
                     return listing;
                 }));
 
-                const bookingResponse = await axios.post("http://localhost:3006/send-email", {
+                const bookingResponse = await axios.post("/send-email", {
                     userEmail : email,
                     userName : consumerName,
                     itemName : headLine,
